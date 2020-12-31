@@ -1,0 +1,261 @@
+// Header-burger main
+.header-burger {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 56px;
+  padding: 10px 0px;
+  box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.1);
+  background: #151517;
+
+  .container {
+    padding: 0;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__wrap {
+    background-color: transparent;
+    position: relative;
+    color: #000;
+    height: 40px;
+    width: 50px;
+
+    label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 11;
+    }
+  }
+
+  #check-menu,
+  #check-contacts {
+    display: none;
+  }
+
+  .burger-line {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 25px;
+    height: 4px;
+    background-color: #fff;
+    transition: 0.5s;
+    z-index: 10;
+
+  }
+
+  .second,
+  .third {
+    top: 16px;
+  }
+
+  .fourth {
+    top: 24px;
+  }
+
+  &__menu {
+    display: block;
+    position: absolute;
+    z-index: 15;
+    height: 100vh;
+    background: #151517;
+    top: 46px;
+    left: -270px;
+    width: 270px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    font-size: 14px;
+    line-height: 34px;
+    box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar-link {
+    display: block;
+    padding: 9px 56px 9px 18px;
+    color: #fff;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 3px;
+    letter-spacing: 1.12px;
+  }
+
+  .navbar-link:hover {
+    background-color: @orangeColor;
+    color: #ffffff;
+  }
+
+  #check-menu:checked~.main-menu {
+    left: 0px;
+  }
+
+  #check-menu:checked~.first {
+    transform: rotate(45deg);
+    transform-origin: 5%;
+    width: 25px
+  }
+
+  #check-menu:checked~.second {
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+
+  #check-menu:checked~.third {
+    transform: translateX(40px);
+    background-color: transparent;
+  }
+
+  #check-menu:checked~.fourth {
+    transform-origin: 5%;
+    transform: rotate(-45deg);
+    width: 25px;
+  }
+
+  &__logo {
+    padding-left: 20px;
+  }
+}
+
+// Header-burger contacts
+.header-burger {
+
+  &__contacts {
+    background-color: transparent;
+    position: absolute;
+    color: #000;
+    right: 10px;
+    top: 15px;
+    height: 31px;
+    width: 25px;
+
+    label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 11;
+    }
+
+    .burger-dots {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      transition: 0.5s;
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .first {
+      top: 0px;
+    }
+
+    .second {
+      top: 10px;
+    }
+
+    .third {
+      top: 20px;
+    }
+
+    &-menu {
+      display: block;
+      position: absolute;
+      z-index: 15;
+      height: 85px;
+      background: #151517;
+      top: 41px;
+      left: -145px;
+      width: 180px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      font-size: 14px;
+      line-height: 34px;
+      box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.15);
+      opacity: 0;
+      visibility: hidden;
+
+      * {
+        color: #ffffff;
+      }
+    }
+
+    &-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1.2px;
+      padding: 7px 5px;
+
+      i {
+        padding-right: 10px;
+        font-size: 18px;
+      }
+
+      .header__burger-number:hover {
+        color: @orangeColor;
+      }
+    }
+
+    &-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 5px;
+
+      a {
+        padding-right: 10px;
+        font-size: 18px;
+
+        &:hover {
+          color: @orangeColor;
+        }
+      }
+    }
+  }
+
+  #check-contacts:checked~.contacts-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #check-contacts:checked~.first {
+    top: 18px;
+    width: 4px;
+    height: 4px;
+  }
+
+  #check-contacts:checked~.second {
+    width: 4px;
+    height: 4px;
+  }
+
+  #check-contacts:checked~.third {
+    top: 2px;
+    width: 4px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-burger {
+    display: block;
+  }
+}
