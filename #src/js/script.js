@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
   @@include('swiper-slider.js')
   @@include('gallery.js')
   @@include('header-burger.js')
+  @@include('header-sticky.js')
+
 
 });
 

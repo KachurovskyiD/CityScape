@@ -1,0 +1,158 @@
+.services {
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__right-block {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 585px;
+  }
+
+  &__description {
+    align-self: center;
+    justify-self: center;
+    padding: 0 70px 70px 70px;
+  }
+
+  &__tagline {
+    padding: 70px;
+    background-color: @orangeColor;
+    line-height: 44px;
+    color: #151517;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  &__card {
+    padding: 70px 60px;
+
+    &:hover {
+      box-shadow: 0px 7px 35px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    &:hover .card__icon {
+      animation: dragIcon 0.5s ease-in 1;
+
+      @keyframes dragIcon {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        30% {
+          transform: rotate(-10deg);
+        }
+
+        60% {
+          transform: rotate(20deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .card {
+
+      &__icon {
+        text-align: center;
+        font-size: 36px;
+        color: @orangeColor;
+        margin-bottom: 10px;
+      }
+
+      &__title {
+        text-align: center;
+        font-style: 24px;
+        font-weight: 700;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .services {
+
+    &__description {
+      padding: 40px 50px;
+    }
+
+    &__tagline {
+      padding: 40px 50px;
+      font-size: 20px;
+      line-height: 36px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .services {
+    &__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+    }
+
+    &__image {
+      max-width: 440px;
+      padding-bottom: 10%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__description {
+      padding: 0 5% 10% 5%;
+    }
+
+    &__tagline {
+      padding: 10% 7%;
+    }
+
+    &__card {
+      padding: 10% 5%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .services {
+    &__cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      margin-top: 45px;
+    }
+
+    &__card {
+      .card {
+        &__title {
+          text-align: center;
+          font-style: 24px;
+          font-weight: 700;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}

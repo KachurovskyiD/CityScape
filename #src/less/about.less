@@ -1,0 +1,238 @@
+.about {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 105%;
+    background: #f6f6f6;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &__content {
+    max-width: 630px;
+    padding: 0 15px;
+  }
+
+  &__description-grey {
+    color: #151517;
+  }
+
+  &__offer {
+    margin-top: 58px;
+    display: flex;
+    justify-content: space-between;
+
+    .offer__item:hover .offer__icon::before {
+      right: 40%;
+    }
+
+    .offer {
+
+      &__item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100px;
+      }
+
+      &__icon {
+        font-size: 50px;
+        margin-bottom: 5%;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -5px;
+          width: 44px;
+          height: 44px;
+          transform: translate(0, 0);
+          will-change: transform;
+          transition: all .6s;
+          border-radius: 50%;
+          background-color: rgba(255, 177, 66, 0.55);
+        }
+
+        &.icon-mod-1::before {
+          right: 10%;
+        }
+
+        &.icon-mod-2::before {
+          top: 15%;
+          right: 5%;
+
+        }
+
+        &.icon-mod-3::before {
+          right: 25%;
+        }
+
+      }
+
+      &__text {
+        cursor: default;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+
+        &:hover {
+          color: @orangeColor;
+        }
+      }
+    }
+  }
+
+  &__counter {
+    align-self: center;
+    justify-self: center;
+
+    .counter {
+
+      &__img {
+        padding-left: 5%;
+        text-align: center;
+        background-image: url('../img/about-img.jpg');
+        overflow: hidden;
+        font-size: 250px;
+        margin-bottom: 5%;
+        letter-spacing: 5px;
+        line-height: 85%;
+        font-weight: 900;
+        background-position-y: 25%;
+        -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(transparent, transparent);
+        background: -o-linear-gradient(transparent, transparent);
+        -webkit-background-clip: text;
+        animation: imgPos 7s linear infinite;
+
+        &:hover {
+          animation-play-state: running;
+        }
+
+        @keyframes imgPos {
+          0% {
+            background-position-x: 0;
+          }
+
+          50% {
+            background-position-x: 100%;
+          }
+
+          100% {
+            background-position-x: 0;
+          }
+        }
+      }
+
+      &__value {
+        pointer-events: none;
+      }
+
+      &__text {
+        text-align: center;
+        letter-spacing: 0.8px;
+      }
+
+      &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: @orangeColor;
+        font-size: 48px;
+        margin-bottom: 5%;
+      }
+
+      &__subtitle {
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .about {
+    &__content {
+      max-width: 510px;
+      padding: 0 15px;
+    }
+
+    &__counter {
+      .counter {
+        &__text {
+          text-align: center;
+          letter-spacing: 0.8px;
+        }
+
+        &__title {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .about {
+    &::before {
+      display: none;
+    }
+
+    &__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+    }
+
+    &__content {
+      max-width: 700px;
+      margin-bottom: 10%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .about {
+
+    &__content {
+      max-width: 90vw;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    &__offer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .offer {
+        &__item {
+          text-align: center;
+          margin-bottom: 15%;
+        }
+      }
+    }
+
+    &__counter {
+      .counter {
+        &__img {
+          font-size: 210px;
+        }
+      }
+    }
+  }
+}
