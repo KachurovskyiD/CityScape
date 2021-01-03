@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
   @@include('gallery.js')
   @@include('header-burger.js')
   @@include('header-sticky.js')
+  @@include('wow.js')
+
 
 
 });
